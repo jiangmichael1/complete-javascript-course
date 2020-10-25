@@ -29,10 +29,43 @@
 
 // const calcAge3 = birthYear => 2037 - birthYear
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2037 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} retires in ${retirement} years`
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//     const age = 2037 - birthYear;
+//     const retirement = 65 - age;
+//     return `${firstName} retires in ${retirement} years`
+// }
+
+// console.log(yearsUntilRetirement(1995, 'Mike'))
+
+// Nested Functions
+// function cutFruitPieces(fruit) {
+//     return fruit * 4
+// }
+
+// function fruitProcessor(apples, oranges){
+//     const applePieces = cutFruitPieces(apples)
+//     const orangePieces = cutFruitPieces(oranges)
+    
+//     const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} of oranges.`
+//     return juice
+// }
+
+// console.log(fruitProcessor(5, 6))
+const calcAge = function(birthYear) {
+    return 2020 - birthYear
 }
 
-console.log(yearsUntilRetirement(1995, 'Mike'))
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age 
+    if(retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`)
+        return retirement
+    } else {
+        console.log(`${firstName} is already retired.`)
+        return -1;
+    }
+    
+}
+
+console.log(yearsUntilRetirement(1950, `Mike`))
